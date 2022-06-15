@@ -9,6 +9,7 @@ export default function InfoCard({img,location,title,description,star,price,tota
         <div className="relative h-[250px] w-50 md:w-80 md:h-52 flex-shrink-0">
             <Image
             src={img}
+            alt="Logo"
             layout="fill"
             className="border-2xl rounded-xl object-cover h-[100%] w-[90%] lg:w-[100%] mx-auto"
              />

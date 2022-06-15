@@ -5,6 +5,7 @@ export const Barnner = () => {
    lg:h-[80vh] 2xl:h-[700px]
     '>
         <Image src="https://links.papareact.com/0fm" 
+        alt="image"
         layout='fill'
         objectFit='cover'
         />

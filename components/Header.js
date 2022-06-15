@@ -8,6 +8,7 @@ import {useRouter} from 'next/dist/client/router'
 import MobileSearch from "./MobileSearch";
 import { useMediaQuery } from 'react-responsive'
 import useClickOutside from "../helpers/clickOutside";
+import LoginPopUp from "./LoginPopUp";
 
 
 export const Header = ({placeholder}) => {
@@ -18,14 +19,20 @@ export const Header = ({placeholder}) => {
   const [endDate, setEndtDate] = useState(new Date());
   const [noOfGuests, setNoOfGuests] = useState(1);
   const [openMobileSearch, setOpenMobileSearch] = useState(false);
+  const [isPopUp, setIsPopUp] = useState(false);
   const selectionRange ={
     startDate:startDate,
     endDate:endDate,
     key:'selection'
   }
-  const searchBar = useRef(null)
+  const searchBar = useRef(null);
+  const closePopUp = useRef(null);
   useClickOutside(searchBar,()=>{
     setOpenMobileSearch(false);
+   
+  })
+  useClickOutside(closePopUp,()=>{
+    setIsPopUp(false);
    
   })
 
@@ -126,12 +133,26 @@ export const Header = ({placeholder}) => {
        
           <div className="flex  items-center space-x-2 justify-end text-gray-500">
           <p className="hidden md:inline cursor-pointer">Become a host</p>
-        <GlobeAltIcon className="h-6" />
-        <div className="flex items-center space-x-2 border-2 p-2 rounded-full cursor-pointer">
+       <div className="animate-spin">
+       <GlobeAltIcon className="h-6" />
+       </div>
+        <div
+        
+        onClick={()=>setIsPopUp(!isPopUp)}
+         className="flex items-center space-x-2 border-2 p-2 rounded-full cursor-pointer">
           <MenuIcon className="h-6" />
           <UserCircleIcon className="h-5"  />
+         
         </div>
         </div>
+
+        {
+        isPopUp && (
+          <div  ref={closePopUp}>
+          <LoginPopUp />
+          </div>
+        )
+      }
       
 
         {

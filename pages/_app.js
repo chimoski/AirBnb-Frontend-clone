@@ -2,7 +2,7 @@ import '../styles/globals.css';
 import '../styles/globals.css';
 import ProgressBar from '@badrap/bar-of-progress';
 import Router from 'next/router'
-
+import "swiper/css/bundle";
 const progress = new ProgressBar({
   size: 4,
   color : '#FE595E',

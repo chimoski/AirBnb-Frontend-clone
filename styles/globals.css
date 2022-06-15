@@ -34,3 +34,30 @@ a {
  
 }
 
+
+
+
+.swiper-slide {
+  width: 70%;
+  margin:0;
+  flex-shrink:unset;
+  flex-wrap: nowrap;
+}
+
+
+.swiper-slide div {
+  width: 100%;
+  gap: .5rem;
+}
+
+.swiper-wrapper{
+  margin: 10rem 0;
+  gap: 0;
+ 
+}
+.swiper{
+ width:80vw
+}
+
+
+

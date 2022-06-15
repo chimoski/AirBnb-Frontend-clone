@@ -3,7 +3,7 @@ import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 import {useRouter} from 'next/dist/client/router'
 import { format } from 'date-fns';
-import InfoCard from '../components/infoCard';
+import InfoCard from '../components/InfoCard';
 import MyMap from '../components/Map';
 
 const Search = ({searchResults}) => {

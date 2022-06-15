@@ -7,8 +7,9 @@ export default function InfoCard({img,location,title,description,star,price,tota
     transition duration-200 ease-out first:border-top
     hover:shadow-lg">
         <div className="relative h-[250px] w-50 md:w-80 md:h-52 flex-shrink-0">
-            <img
+            <Image
             src={img}
+            layout="fill"
             className="border-2xl rounded-xl object-cover h-[100%] w-[90%] lg:w-[100%] mx-auto"
              />
         </div>
